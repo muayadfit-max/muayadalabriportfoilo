@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Muayad Al Abri – Process Engineer portfolio showcasing projects in CO2 capture, blue hydrogen, distillation, and petrochemical engineering." />
+  <title>Muayad Al Abri | Process Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    /* ─── Reset & Base ─────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue-dark:   #0d2d5e;
+      --blue-mid:    #1a4a9c;
+      --blue-accent: #2563eb;
+      --blue-light:  #dbeafe;
+      --teal:        #0ea5e9;
+      --bg:          #f8fafc;
+      --surface:     #ffffff;
+      --border:      #e2e8f0;
+      --text:        #0f172a;
+      --text-muted:  #475569;
+      --radius:      12px;
+      --shadow-sm:   0 1px 3px rgba(0,0,0,.08);
+      --shadow-md:   0 4px 16px rgba(13,45,94,.10);
+      --shadow-lg:   0 12px 40px rgba(13,45,94,.15);
+      --transition:  .25s cubic-bezier(.4,0,.2,1);
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; font-size: 16px; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ─── Utility ───────────────────────────────────────────── */
+    .container { max-width: 1140px; margin: 0 auto; padding: 0 24px; }
+    .section-label { font-size: .75rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--blue-accent); margin-bottom: 10px; }
+    .section-title { font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 800; color: var(--blue-dark); margin-bottom: 14px; line-height: 1.2; }
+    .section-divider { width: 56px; height: 4px; background: linear-gradient(90deg, var(--blue-accent), var(--teal)); border-radius: 9999px; margin-bottom: 40px; }
+    section { padding: 80px 0; }
+    .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-size: .9rem; font-weight: 600; cursor: pointer; transition: all var(--transition); border: 2px solid transparent; white-space: nowrap; }
+    .btn-primary { background: var(--blue-accent); color: #fff; }
+    .btn-primary:hover { background: var(--blue-mid); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37,99,235,.35); }
+    .btn-outline { background: transparent; color: var(--blue-accent); border-color: var(--blue-accent); }
+    .btn-outline:hover { background: var(--blue-light); transform: translateY(-2px); }
+    .btn-ghost { background: rgba(255,255,255,.15); color: #fff; border-color: rgba(255,255,255,.5); backdrop-filter: blur(4px); }
+    .btn-ghost:hover { background: rgba(255,255,255,.25); transform: translateY(-2px); }
+    .tag { display: inline-block; font-size: .72rem; font-weight: 600; padding: 3px 10px; border-radius: 9999px; background: var(--blue-light); color: var(--blue-mid); }
+
+    /* ─── Navbar ────────────────────────────────────────────── */
+    #navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(255,255,255,.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      transition: box-shadow var(--transition);
+    }
+    #navbar.scrolled { box-shadow: var(--shadow-md); }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+    .nav-logo { font-size: 1.1rem; font-weight: 800; color: var(--blue-dark); }
+    .nav-logo span { color: var(--blue-accent); }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: .875rem; font-weight: 500; color: var(--text-muted); transition: color var(--transition); }
+    .nav-links a:hover { color: var(--blue-accent); }
+    .nav-cta { font-size: .875rem; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--blue-dark); border-radius: 2px; transition: all var(--transition); }
+    .mobile-menu { display: none; position: fixed; top: 64px; left: 0; right: 0; background: #fff; border-bottom: 1px solid var(--border); padding: 20px 24px; z-index: 999; box-shadow: var(--shadow-lg); }
+    .mobile-menu.open { display: block; }
+    .mobile-menu a { display: block; padding: 12px 0; font-weight: 500; color: var(--text); border-bottom: 1px solid var(--border); }
+    .mobile-menu a:last-child { border-bottom: none; }
+
+    /* ─── Hero ──────────────────────────────────────────────── */
+    #hero {
+      padding: 120px 0 80px;
+      background: linear-gradient(135deg, var(--blue-dark) 0%, #1d3d7a 50%, #0d3460 100%);
+      color: #fff;
+      position: relative;
+      overflow: hidden;
+    }
+    #hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .hero-inner { display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center; position: relative; z-index: 1; }
+    .hero-name { font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 800; line-height: 1.1; margin-bottom: 16px; }
+    .hero-name .accent { color: var(--teal); }
+    .hero-tagline { font-size: clamp(.85rem, 2vw, 1.05rem); font-weight: 400; color: rgba(255,255,255,.8); margin-bottom: 20px; line-height: 1.7; max-width: 600px; }
+    .hero-bio { font-size: .95rem; color: rgba(255,255,255,.72); margin-bottom: 32px; max-width: 580px; line-height: 1.75; }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+    .hero-photo-wrap { flex-shrink: 0; }
+    .hero-photo { width: 220px; height: 220px; border-radius: 50%; object-fit: cover; object-position: top center; border: 4px solid rgba(255,255,255,.25); box-shadow: 0 20px 60px rgba(0,0,0,.35); }
+
+    /* ─── About ─────────────────────────────────────────────── */
+    #about { background: var(--surface); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .about-bio p { color: var(--text-muted); margin-bottom: 16px; }
+    .about-facts { display: flex; flex-direction: column; gap: 12px; margin-top: 24px; }
+    .fact { display: flex; align-items: center; gap: 12px; }
+    .fact-icon { width: 36px; height: 36px; border-radius: 8px; background: var(--blue-light); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; }
+    .fact-text { font-size: .9rem; color: var(--text-muted); }
+    .fact-text strong { color: var(--text); }
+    .skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .skill-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+    .skill-card h4 { font-size: .8rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: var(--blue-accent); margin-bottom: 10px; }
+    .skill-card ul { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .skill-card li { font-size: .82rem; color: var(--text-muted); display: flex; align-items: baseline; gap: 6px; }
+    .skill-card li::before { content: '▸'; color: var(--blue-accent); flex-shrink: 0; }
+
+    /* ─── Projects ──────────────────────────────────────────── */
+    #projects { background: var(--bg); }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 28px; }
+    .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all var(--transition); display: flex; flex-direction: column; }
+    .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--blue-accent); }
+    .project-img { width: 100%; height: 200px; object-fit: cover; background: linear-gradient(135deg, var(--blue-dark), var(--blue-accent)); }
+    .project-img-placeholder { width: 100%; height: 200px; background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; color: rgba(255,255,255,.7); font-size: .85rem; gap: 8px; }
+    .project-img-placeholder .proj-icon { font-size: 2.5rem; }
+    .project-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .project-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .project-body h3 { font-size: 1.1rem; font-weight: 700; color: var(--blue-dark); margin-bottom: 10px; line-height: 1.3; }
+    .project-body p { font-size: .875rem; color: var(--text-muted); line-height: 1.7; flex: 1; }
+    .project-skills { margin: 16px 0; display: flex; flex-direction: column; gap: 4px; }
+    .project-skills li { font-size: .8rem; color: var(--text-muted); display: flex; align-items: baseline; gap: 6px; list-style: none; }
+    .project-skills li::before { content: '✓'; color: var(--teal); font-weight: 700; flex-shrink: 0; }
+    .project-footer { margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--border); }
+    .project-footer a { font-size: .85rem; font-weight: 600; color: var(--blue-accent); display: inline-flex; align-items: center; gap: 6px; transition: gap var(--transition); }
+    .project-footer a:hover { gap: 10px; }
+
+    /* ─── Skills ────────────────────────────────────────────── */
+    #skills { background: var(--surface); }
+    .skills-section-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 24px; }
+    .skill-group { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; transition: all var(--transition); }
+    .skill-group:hover { border-color: var(--blue-accent); box-shadow: var(--shadow-md); }
+    .skill-group-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+    .skill-group-icon { width: 40px; height: 40px; border-radius: 10px; background: linear-gradient(135deg, var(--blue-accent), var(--teal)); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; }
+    .skill-group h3 { font-size: .95rem; font-weight: 700; color: var(--blue-dark); }
+    .skill-group ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .skill-group li { font-size: .85rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+    .skill-group li::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: var(--blue-accent); flex-shrink: 0; }
+
+    /* ─── Contact ───────────────────────────────────────────── */
+    #contact { background: linear-gradient(135deg, var(--blue-dark) 0%, #1d3d7a 100%); color: #fff; padding: 80px 0; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    #contact .section-label { color: var(--teal); }
+    #contact .section-title { color: #fff; }
+    .contact-info { display: flex; flex-direction: column; gap: 20px; }
+    .contact-item { display: flex; align-items: center; gap: 16px; }
+    .contact-icon { width: 44px; height: 44px; border-radius: 10px; background: rgba(255,255,255,.12); display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .contact-item a, .contact-item span { font-size: .9rem; color: rgba(255,255,255,.8); transition: color var(--transition); }
+    .contact-item a:hover { color: var(--teal); }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-group label { font-size: .8rem; font-weight: 600; color: rgba(255,255,255,.7); text-transform: uppercase; letter-spacing: .06em; }
+    .form-group input, .form-group textarea {
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.2);
+      border-radius: 8px; padding: 12px 16px; color: #fff; font-family: inherit; font-size: .9rem;
+      transition: border-color var(--transition); outline: none; resize: vertical;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,.4); }
+    .form-group input:focus, .form-group textarea:focus { border-color: var(--teal); background: rgba(255,255,255,.15); }
+    .form-submit { background: var(--teal); color: #fff; border: none; border-radius: 8px; padding: 14px 28px; font-size: .9rem; font-weight: 700; cursor: pointer; transition: all var(--transition); }
+    .form-submit:hover { background: #0284c7; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(14,165,233,.4); }
+
+    /* ─── Footer ────────────────────────────────────────────── */
+    footer { background: var(--blue-dark); color: rgba(255,255,255,.5); text-align: center; padding: 20px 24px; font-size: .8rem; border-top: 1px solid rgba(255,255,255,.08); }
+
+    /* ─── Responsive ────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .hero-inner { grid-template-columns: 1fr; text-align: center; }
+      .hero-photo-wrap { display: flex; justify-content: center; order: -1; }
+      .hero-photo { width: 170px; height: 170px; }
+      .hero-tagline, .hero-bio { margin-left: auto; margin-right: auto; }
+      .hero-buttons { justify-content: center; }
+      .about-grid { grid-template-columns: 1fr; gap: 40px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      section { padding: 60px 0; }
+      .projects-grid { grid-template-columns: 1fr; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .hero-buttons { flex-direction: column; align-items: center; }
+      .btn { width: 100%; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── Navbar ─────────────────────────────────────────────────── -->
+<nav id="navbar">
+  <div class="container nav-inner">
+    <a href="#hero" class="nav-logo">Muayad<span>.</span></a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="MUAYAD_HAMED_ALABRI.docx" download class="btn btn-outline nav-cta" style="padding:9px 18px;font-size:.8rem;">Download CV</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#about" class="mobile-link">About</a>
+  <a href="#projects" class="mobile-link">Projects</a>
+  <a href="#skills" class="mobile-link">Skills</a>
+  <a href="#contact" class="mobile-link">Contact</a>
+  <a href="MUAYAD_HAMED_ALABRI.docx" download class="mobile-link">Download CV</a>
+</div>
+
+<!-- ── Hero ───────────────────────────────────────────────────── -->
+<section id="hero">
+  <div class="container">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <p class="section-label" style="color:var(--teal)">Portfolio</p>
+        <h1 class="hero-name">Muayad <span class="accent">Al Abri</span></h1>
+        <p class="hero-tagline">
+          Process Engineer &nbsp;|&nbsp; Refinery &amp; Petrochemical Processes<br>
+          CO₂ Capture &amp; Sustainable Engineering Enthusiast<br>
+          Based in Muscat, Oman 🇴🇲
+        </p>
+        <p class="hero-bio">
+          Chemical and Process Engineering graduate from Sultan Qaboos University (Class of 2025), with internship experience in industrial maintenance and process safety across Oman's energy sector. Passionate about process simulation, blue hydrogen, CO₂ capture, and Oman's energy transition. OPAL-certified in H2S Safety and HSE.
+        </p>
+        <div class="hero-buttons">
+          <a href="#projects" class="btn btn-primary">🚀 View Projects</a>
+          <a href="MUAYAD_HAMED_ALABRI.docx" download class="btn btn-ghost">📄 Download CV</a>
+          <a href="https://om.linkedin.com/in/muayadalabri" target="_blank" rel="noopener" class="btn btn-ghost">🔗 LinkedIn</a>
+          <a href="mailto:muayad.alabri1@gmail.com" class="btn btn-ghost">✉️ Contact</a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <img class="hero-photo" src="Muayad Profile Picture.jpg" alt="Muayad Al Abri" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── About ──────────────────────────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <p class="section-label">About Me</p>
+    <h2 class="section-title">Who I Am</h2>
+    <div class="section-divider"></div>
+    <div class="about-grid">
+      <div class="about-bio">
+        <p>
+          I'm a Chemical and Process Engineering graduate from Sultan Qaboos University (2025), with a strong foundation in process simulation, thermodynamics, heat transfer, and plant economics. My academic journey culminated in a senior capstone project on <strong>Blue Hydrogen Production from Flare Gas</strong> — simulated using Aspen HYSYS and assessed for techno-economic viability aligned with Oman Vision 2040.
+        </p>
+        <p>
+          My internships have given me real-world exposure: at <strong>Falcon Wireline &amp; Drilling Systems</strong> I contributed to process safety documentation, SOPs, and HSE compliance within oil &amp; gas field operations. At the <strong>Port of Duqm Company (PODC)</strong>, I gained hands-on experience in industrial asset management, preventive maintenance planning, and equipment troubleshooting.
+        </p>
+        <p>
+          I'm deeply interested in <strong>CO₂ capture</strong>, <strong>distillation column design</strong>, <strong>heat integration</strong>, and sustainable engineering. I believe process engineering is key to decarbonising the energy sector — and I want to be part of that transition.
+        </p>
+        <p>
+          Outside engineering, I founded <strong>MuayadFit</strong>, a digital health and fitness brand in Oman, where I developed entrepreneurial, data-analytics, and partnership management skills.
+        </p>
+        <div class="about-facts">
+          <div class="fact"><div class="fact-icon">🎓</div><div class="fact-text"><strong>BSc Chemical &amp; Process Engineering</strong> — Sultan Qaboos University, 2020–2025</div></div>
+          <div class="fact"><div class="fact-icon">📍</div><div class="fact-text"><strong>Muscat, Oman</strong></div></div>
+          <div class="fact"><div class="fact-icon">📧</div><div class="fact-text"><a href="mailto:muayad.alabri1@gmail.com" style="color:var(--blue-accent)">muayad.alabri1@gmail.com</a></div></div>
+          <div class="fact"><div class="fact-icon">📞</div><div class="fact-text"><strong>+968 97 200 240</strong></div></div>
+          <div class="fact"><div class="fact-icon">🗣️</div><div class="fact-text"><strong>Arabic</strong> (Native) &nbsp;·&nbsp; <strong>English</strong> (Fluent – Professional)</div></div>
+          <div class="fact"><div class="fact-icon">🏅</div><div class="fact-text">OPAL-certified: <strong>H2S Safety</strong> &amp; <strong>HSE Training</strong> (July 2024)</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h4>🏭 Process Engineering</h4>
+            <ul>
+              <li>CDU / VDU Operations</li>
+              <li>Atmospheric Distillation</li>
+              <li>Fractional Distillation</li>
+              <li>Heat Integration</li>
+              <li>Mass &amp; Energy Balances</li>
+              <li>P&amp;ID Reading</li>
+              <li>Process Troubleshooting</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h4>⚗️ Equipment</h4>
+            <ul>
+              <li>Shell &amp; Tube Heat Exchangers</li>
+              <li>Air Coolers</li>
+              <li>Centrifugal &amp; PD Pumps</li>
+              <li>Distillation Columns</li>
+              <li>Desalter Operation</li>
+              <li>Reactors (SMR)</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h4>💻 Simulation</h4>
+            <ul>
+              <li>Aspen HYSYS</li>
+              <li>Aspen Plus</li>
+              <li>Excel (Advanced)</li>
+              <li>Microsoft Office Suite</li>
+            </ul>
+          </div>
+          <div class="skill-card">
+            <h4>🛡️ Safety &amp; HSE</h4>
+            <ul>
+              <li>H2S Safety (OPAL)</li>
+              <li>HSE Management</li>
+              <li>HAZOP Awareness</li>
+              <li>Permit-to-Work (PTW)</li>
+              <li>PSM Principles</li>
+              <li>Risk Assessment</li>
+              <li>SOP Development</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Projects ───────────────────────────────────────────────── -->
+<section id="projects">
+  <div class="container">
+    <p class="section-label">My Work</p>
+    <h2 class="section-title">Featured Projects</h2>
+    <div class="section-divider"></div>
+    <div class="projects-grid">
+
+      <!-- Project 1: CO2 Capture -->
+      <div class="project-card">
+        <div class="project-img-placeholder">
+          <span class="proj-icon">🌿</span>
+          <span>CO₂ Capture &amp; Storage</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">Aspen HYSYS</span>
+            <span class="tag">CO₂ Capture</span>
+            <span class="tag">Blue Hydrogen</span>
+          </div>
+          <h3>Carbon Capture &amp; Storage – Technical Design and Analysis</h3>
+          <p>
+            A comprehensive technical study on post-combustion CO₂ capture systems, evaluating absorption-based and membrane separation technologies. The project covers process flow design, equipment sizing, mass and energy balance calculations, and sustainability impact assessment. Simulation results quantify CO₂ reduction potential and evaluate integration with existing industrial processes, providing a feasibility framework aligned with Oman's Vision 2040 decarbonisation targets.
+          </p>
+          <ul class="project-skills">
+            <li>Process simulation &amp; mass balances</li>
+            <li>Absorption column design</li>
+            <li>Heat integration optimisation</li>
+            <li>Sustainability &amp; CO₂ quantification</li>
+          </ul>
+          <div class="project-footer">
+            <a href="Carbon_Capture_and_Storage_Technical_Design_and_Analysis.pdf" target="_blank">View Full Report →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2: PCC -->
+      <div class="project-card">
+        <div class="project-img-placeholder">
+          <span class="proj-icon">🧪</span>
+          <span>PCC Plant Proposal</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">Process Design</span>
+            <span class="tag">PCC Production</span>
+            <span class="tag">Plant Economics</span>
+          </div>
+          <h3>Precipitated Calcium Carbonate (PCC) Plant Proposal</h3>
+          <p>
+            A detailed plant design proposal for a Precipitated Calcium Carbonate production facility, covering raw material selection, reaction pathway (carbonation process), equipment specifications, and process flow diagrams. The study includes techno-economic analysis evaluating CAPEX and OPEX, with a market feasibility assessment. PCC is a key industrial mineral used in paper, plastics, and pharmaceuticals, making this project directly relevant to petrochemical diversification strategies.
+          </p>
+          <ul class="project-skills">
+            <li>Reactor design &amp; carbonation process</li>
+            <li>Process Flow Diagrams (PFDs)</li>
+            <li>Techno-economic feasibility (CAPEX/OPEX)</li>
+            <li>Plant layout &amp; equipment sizing</li>
+          </ul>
+          <div class="project-footer">
+            <a href="PCC_Plant_Proposal_Muayad_Alabri_2.pdf" target="_blank">View Full Report →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3: Distillation Column -->
+      <div class="project-card">
+        <div class="project-img-placeholder">
+          <span class="proj-icon">🏗️</span>
+          <span>Distillation Column Design</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">Distillation</span>
+            <span class="tag">Column Design</span>
+            <span class="tag">Mass Transfer</span>
+          </div>
+          <h3>Distillation Column – Detailed Engineering Calculations</h3>
+          <p>
+            A rigorous hand-calculation and simulation-supported study of distillation column design, covering feed tray location, reflux ratio optimisation, number of theoretical plates (McCabe-Thiele method), and column diameter sizing. The project demonstrates a thorough understanding of vapour-liquid equilibrium, tray efficiency, and separation performance — core competencies for refinery fractionation units such as CDU/VDU atmospheric columns and product splitters.
+          </p>
+          <ul class="project-skills">
+            <li>McCabe-Thiele &amp; Fenske methods</li>
+            <li>Reflux ratio &amp; tray efficiency</li>
+            <li>VLE &amp; thermodynamic analysis</li>
+            <li>Column sizing &amp; hydraulics</li>
+          </ul>
+          <div class="project-footer">
+            <a href="Distillation Column Calculation.pdf" target="_blank">View Full Report →</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4: Digital Work Order -->
+      <div class="project-card">
+        <div class="project-img-placeholder">
+          <span class="proj-icon">📊</span>
+          <span>Digital Work Order System</span>
+        </div>
+        <div class="project-body">
+          <div class="project-tags">
+            <span class="tag">Business Case</span>
+            <span class="tag">Digital Transform</span>
+            <span class="tag">Asset Reliability</span>
+          </div>
+          <h3>Digital Work Order Form – Business Case &amp; Proposal</h3>
+          <p>
+            A business case presentation for implementing a digital work order management system in an industrial asset management environment. Drawing from internship experience at Port of Duqm Company, this proposal evaluates the transition from paper-based to digital workflows, quantifies efficiency gains, reduces human-error risk, and improves traceability for maintenance and turnaround planning. Demonstrates strong cross-disciplinary skills in engineering, operations, and digital transformation.
+          </p>
+          <ul class="project-skills">
+            <li>Business case development</li>
+            <li>Maintenance workflow optimisation</li>
+            <li>Digital transformation analysis</li>
+            <li>Risk &amp; benefits assessment</li>
+          </ul>
+          <div class="project-footer">
+            <a href="Digital_Work_Order_Form_-_Business_Case.pptx" target="_blank">View Presentation →</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Skills ─────────────────────────────────────────────────── -->
+<section id="skills">
+  <div class="container">
+    <p class="section-label">Expertise</p>
+    <h2 class="section-title">Technical Skills</h2>
+    <div class="section-divider"></div>
+    <div class="skills-section-grid">
+
+      <div class="skill-group">
+        <div class="skill-group-header">
+          <div class="skill-group-icon">🏭</div>
+          <h3>Process Fundamentals</h3>
+        </div>
+        <ul>
+          <li>CDU / VDU Operations</li>
+          <li>Atmospheric &amp; Fractional Distillation</li>
+          <li>Heat Integration</li>
+          <li>Mass and Energy Balances</li>
+          <li>P&amp;ID Reading &amp; Interpretation</li>
+          <li>Process Troubleshooting</li>
+          <li>Pump Systems (Centrifugal, PD)</li>
+          <li>Heat Exchangers (S&amp;T, Air Coolers)</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-header">
+          <div class="skill-group-icon">🔬</div>
+          <h3>Refining &amp; Petrochemicals</h3>
+        </div>
+        <ul>
+          <li>Polymer Processes (PP / PE / HDPE / LDPE)</li>
+          <li>Aromatics and BTEX</li>
+          <li>Octane Improvement Processes</li>
+          <li>Catalytic Reforming Fundamentals</li>
+          <li>Desalter Operation</li>
+          <li>Steam Methane Reforming (SMR)</li>
+          <li>CO₂ Capture Technologies</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-header">
+          <div class="skill-group-icon">💻</div>
+          <h3>Simulation &amp; Software</h3>
+        </div>
+        <ul>
+          <li>Aspen HYSYS</li>
+          <li>Aspen Plus</li>
+          <li>Microsoft Excel (Advanced)</li>
+          <li>PowerPoint &amp; Word</li>
+          <li>Process Flow Diagram (PFD) Design</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-header">
+          <div class="skill-group-icon">🛡️</div>
+          <h3>Safety &amp; Standards</h3>
+        </div>
+        <ul>
+          <li>H2S Safety (OPAL-Certified)</li>
+          <li>HSE Management (OPAL-Certified)</li>
+          <li>HAZOP Awareness</li>
+          <li>Permit-to-Work (PTW) Systems</li>
+          <li>Process Safety Management (PSM)</li>
+          <li>Risk Assessment</li>
+          <li>Technical Safety Documentation</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-header">
+          <div class="skill-group-icon">🌱</div>
+          <h3>Sustainability</h3>
+        </div>
+        <ul>
+          <li>Blue Hydrogen Production</li>
+          <li>CO₂ Capture &amp; Storage (CCS)</li>
+          <li>Techno-Economic Feasibility</li>
+          <li>Oman Vision 2040 Alignment</li>
+          <li>Energy Transition Analysis</li>
+          <li>CAPEX / OPEX / NPV Evaluation</li>
+        </ul>
+      </div>
+
+      <div class="skill-group">
+        <div class="skill-group-header">
+          <div class="skill-group-icon">🗣️</div>
+          <h3>Languages &amp; Soft Skills</h3>
+        </div>
+        <ul>
+          <li>Arabic – Native</li>
+          <li>English – Fluent (Professional)</li>
+          <li>Technical Report Writing</li>
+          <li>Cross-functional Collaboration</li>
+          <li>Data-Driven Decision Making</li>
+          <li>Project Management</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── Contact ────────────────────────────────────────────────── -->
+<section id="contact">
+  <div class="container">
+    <p class="section-label">Get In Touch</p>
+    <h2 class="section-title">Contact Me</h2>
+    <div class="section-divider" style="background:linear-gradient(90deg,var(--teal),#38bdf8)"></div>
+    <div class="contact-grid">
+      <div>
+        <p style="color:rgba(255,255,255,.75);margin-bottom:32px;max-width:420px;line-height:1.75;">
+          I'm open to process engineering roles, research collaborations, or any conversation about sustainable energy and refinery operations. Feel free to reach out!
+        </p>
+        <div class="contact-info">
+          <div class="contact-item">
+            <div class="contact-icon">✉️</div>
+            <a href="mailto:muayad.alabri1@gmail.com">muayad.alabri1@gmail.com</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📞</div>
+            <a href="tel:+96897200240">+968 97 200 240</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">🔗</div>
+            <a href="https://om.linkedin.com/in/muayadalabri" target="_blank" rel="noopener">linkedin.com/in/muayadalabri</a>
+          </div>
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <span>Muscat, Sultanate of Oman</span>
+          </div>
+        </div>
+      </div>
+      <form class="contact-form" onsubmit="handleFormSubmit(event)">
+        <div class="form-group">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Ahmed Al Rashdi" required />
+        </div>
+        <div class="form-group">
+          <label for="email">Your Email</label>
+          <input type="email" id="email" name="email" placeholder="ahmed@example.com" required />
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="I'd like to discuss..." required></textarea>
+        </div>
+        <button type="submit" class="form-submit">Send Message ✈️</button>
+        <p id="form-feedback" style="color:var(--teal);font-size:.85rem;display:none;margin-top:8px;">✓ Message sent! Redirecting to your email client…</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ── Footer ─────────────────────────────────────────────────── -->
+<footer>
+  <p>© 2026 Muayad Al Abri &nbsp;·&nbsp; Process Engineer &nbsp;·&nbsp; Muscat, Oman</p>
+</footer>
+
+<script>
+  /* Navbar scroll shadow */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 20);
+  });
+
+  /* Hamburger menu */
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+  });
+
+  /* Contact form → mailto fallback */
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const subject = encodeURIComponent(`Portfolio Contact from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+    document.getElementById('form-feedback').style.display = 'block';
+    setTimeout(() => {
+      window.location.href = `mailto:muayad.alabri1@gmail.com?subject=${subject}&body=${body}`;
+    }, 800);
+  }
+
+  /* Smooth reveal on scroll */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = '1';
+        entry.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll('.project-card, .skill-group, .about-bio, .skills-grid').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
