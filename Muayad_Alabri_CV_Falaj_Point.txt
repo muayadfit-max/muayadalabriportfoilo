@@ -1,0 +1,54 @@
+# Muayad Hamed Al Abri
+**Business Relationship Manager | Chemical & Process Engineering Consultancy**
+Muscat, Oman | +968 97 200 240 | muayad.alabri1@gmail.com | linkedin.com/in/muayadalabri
+
+## PROFESSIONAL SUMMARY
+Working professional bridging technical chemical and process engineering expertise with client relationships, business development, and strategic advisory. Actively supporting industrial and energy sector clients across Oman and engaging with the national chemical and process consulting landscape. Strong technical foundation in process simulation (Aspen HYSYS), CO2 capture, distillation, and heat integration. OPAL-certified in H2S Safety and HSE.
+
+## PROFESSIONAL EXPERIENCE
+
+**Business Relationship Manager**
+*Falaj Point | Muscat, Oman*
+* Bridging technical process engineering with business development across Oman’s energy and industrial sectors.
+* Exploring collaboration opportunities and providing chemical and process engineering advisory services tailored to industrial and energy sector clients.
+* Engaging with the national chemical and process consulting landscape on ministerial-level projects and industrial cluster initiatives.
+
+**Founder and Business Developer**
+*MuayadFit | Muscat, Oman*
+* Built and scaled a digital health and fitness brand, serving as a dynamic entrepreneurial venture.
+* Sharpened business acumen, partnership building, and data analytics skills through B2B partnerships with regional companies (Myprotein, Mazoon Dairy, Captain Oats).
+* Applied data-driven decision-making through audience analytics and content optimization.
+
+**Industrial Asset Management & Reliability**
+*Port of Duqm Company (PODC) | Duqm, Oman*
+* Worked in industrial asset management and preventive maintenance planning.
+* Gained hands-on exposure to equipment troubleshooting, digital work order systems, and industrial reliability practices.
+
+**Process Safety & HSE Compliance**
+*Falcon Wireline and Drilling Systems | Nizwa, Oman*
+* Contributed to process safety documentation, Safe Operating Procedures (SOPs), and HSE compliance within oil & gas field operations.
+
+## EDUCATION
+**Bachelor of Science in Chemical and Process Engineering**
+*Sultan Qaboos University | Muscat, Oman*
+
+## FEATURED PROJECTS
+**Blue Hydrogen Production from Flare Gas (Capstone)**
+* Designed and simulated a blue hydrogen production process from refinery flare gas using Aspen HYSYS, covering feed conditioning, SMR, and CO2 capture. 
+* Conducted techno-economic feasibility study evaluating CAPEX, OPEX, and NPV aligned with Oman Vision 2040.
+
+**Carbon Capture & Storage – Technical Design and Analysis**
+* Conducted technical study on post-combustion CO2 capture systems, covering process flow design, equipment sizing, mass and energy balances, and sustainability impact assessment.
+
+**Precipitated Calcium Carbonate (PCC) Plant Proposal**
+* Developed detailed plant design proposal covering raw material selection, carbonation process, equipment specifications, and techno-economic analysis (CAPEX/OPEX).
+
+**Distillation Column – Detailed Engineering Calculations**
+* Performed rigorous hand-calculation and simulation-supported study of distillation column design (McCabe-Thiele method, reflux ratio optimization, column sizing).
+
+## TECHNICAL SKILLS
+* **Process Fundamentals:** CDU/VDU Operations, Atmospheric/Fractional Distillation, Heat Integration, Mass/Energy Balances, P&ID Reading, Troubleshooting.
+* **Refining & Petrochemicals:** Polymer Processes, Aromatics/BTEX, Catalytic Reforming, Desalter Operation, SMR, CO2 Capture Technologies.
+* **Simulation & Software:** Aspen HYSYS, Aspen Plus, Advanced Excel.
+* **Safety & Standards:** H2S Safety (OPAL), HSE Management (OPAL), HAZOP Awareness, PTW Systems, PSM Principles, Risk Assessment.
+* **Languages:** Arabic (Native), English (Fluent - Professional).
